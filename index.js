@@ -1,4 +1,5 @@
 const fs = require("fs");
+const { formatCurrency, formatPercentage } = require("./utils");
 
 try {
   // Load and parse the data file
@@ -84,11 +85,13 @@ try {
     : 0;
 
   // Print results
-  console.log(`Revenue: ${revenue}`);
-  console.log(`Expenses: ${expenses}`);
-  console.log(`Gross Profit Margin: ${grossProfitMargin}`);
-  console.log(`Net Profit Margin: ${netProfitMargin}`);
-  console.log(`Working Capital Ratio: ${workingCapitalRatio}`);
+  console.log(`Revenue: ${formatCurrency(revenue)}`);
+  console.log(`Expenses: ${formatCurrency(expenses)}`);
+  console.log(`Gross Profit Margin: ${formatPercentage(grossProfitMargin)}`);
+  console.log(`Net Profit Margin: ${formatPercentage(netProfitMargin)}`);
+  console.log(
+    `Working Capital Ratio: ${formatPercentage(workingCapitalRatio)}`
+  );
 } catch (error) {
   console.error(`Error: ${error.message}`);
 }
