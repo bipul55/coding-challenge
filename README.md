@@ -10,7 +10,6 @@ Make sure Node.js is installed on your computer. You can download it from the [o
 
 Use the following command in your terminal to run the `main.js` file:
 
-````bash
+```bash
 node main.js
-bash```
-````
+```
