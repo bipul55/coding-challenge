@@ -75,14 +75,10 @@ try {
   }
 
   // Calculate final metrics
-  grossProfitMargin = revenue ? ((sales / revenue) * 100).toFixed(1) : 0;
-  netProfitMargin = revenue
-    ? (((revenue - expenses) / revenue) * 100).toFixed(1)
-    : 0;
+  grossProfitMargin = revenue ? (sales / revenue) * 100 : 0;
+  netProfitMargin = revenue ? ((revenue - expenses) / revenue) * 100 : 0;
 
-  workingCapitalRatio = liabilities
-    ? ((assets / liabilities) * 100).toFixed(1)
-    : 0;
+  workingCapitalRatio = liabilities ? (assets / liabilities) * 100 : 0;
 
   // Print results
   console.log(`Revenue: ${formatCurrency(revenue)}`);

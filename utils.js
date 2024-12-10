@@ -10,7 +10,9 @@ const formatCurrency = (value) => {
       `Invalid input for formatCurrency: ${value}. Expected a number.`
     );
   }
-  return `$${value.toLocaleString(undefined, { maximumFractionDigits: 0 })}`;
+  return `$${value
+    .toFixed(1)
+    .toLocaleString(undefined, { maximumFractionDigits: 0 })}`;
 };
 
 /**
@@ -25,7 +27,7 @@ const formatPercentage = (value) => {
       `Invalid input for formatPercentage: ${value}. Expected a number.`
     );
   }
-  return `${value}%`;
+  return `${value.toFixed(1)}%`;
 };
 
 // Export the functions
